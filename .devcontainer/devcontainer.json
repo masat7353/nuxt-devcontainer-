@@ -1,0 +1,40 @@
+{
+  "name": "global-communication Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "mounts": [
+    "target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "target=${containerWorkspaceFolder}/.next,type=volume"
+  ],
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "dbaeumer.vscode-eslint"
+      ]
+  //     "settings": {
+  //       "cSpell.words": [
+  //         "Nuxt"
+  //       ],
+  //       "[vue]": {
+  //         "editor.formatOnSave": true,
+  //         "editor.defaultFormatter": "Vue.volar"
+  //       },
+  //       "[typescript]": {
+  //         "editor.formatOnSave": true,
+  //         "editor.defaultFormatter": "Vue.volar"
+  //       },
+  //       "editor.tabSize": 2
+  //     }
+    }
+  },
+  "postCreateCommand": "yarn"
+  // 以下コマンドでコンテナにアタッチしたタイミングでinstallが走るようにできる
+  // "postAttachCommand": {
+  //   "clean": "rm -rf node_modules/*",
+  //   "install": "yarn"
+  // }
+}
