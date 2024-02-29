@@ -13,25 +13,20 @@
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "streetsidesoftware.code-spell-checker",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
       ],
       "settings": {
-        "cSpell.words": [
-          "dbaeumer",
-          "tailwindcss"
-        ],
+        "cSpell.words": ["dbaeumer", "tailwindcss", "esbenp"],
         "eslint.useESLintClass": true,
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[typescriptreact]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
       }
-      //       "[vue]": {
-      //         "editor.formatOnSave": true,
-      //         "editor.defaultFormatter": "Vue.volar"
-      //       },
-      //       "[typescript]": {
-      //         "editor.formatOnSave": true,
-      //         "editor.defaultFormatter": "Vue.volar"
-      //       },
-      //     }
     }
   },
   "postCreateCommand": "yarn"
